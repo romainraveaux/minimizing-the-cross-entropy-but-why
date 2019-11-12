@@ -11958,9 +11958,9 @@ In addition, the derivative of $log(x)$ is equal to $\dfrac{\partial log(x)}{\pa
 </li>
 <li><p>$\dfrac{\partial q_1}{\partial W_0} = \dfrac{\partial q_1}{\partial p_1} \dfrac{\partial p_1}{\partial W_0}=(-\dfrac{t_i}{\hat{t_n}}+\dfrac{1-t_n}{1-\hat{t_n}})\dfrac{\partial p_1}{\partial W_0}$</p>
 </li>
-<li><p>$q_2=\hat{t_n}=sigmoid(z_n)$ and $p_2=z_n$ so $q_2=sigmoid(z_n)$</p>
+<li><p>$q_2=\hat{t_n}=\sigma(z_n)$ and $p_2=z_n$ so $q_2=\sigma(z_n)$</p>
 </li>
-<li><p>$\dfrac{\partial q_2}{\partial W_0} = \dfrac{\partial q_2}{\partial p_2} \dfrac{\partial p_2}{\partial W_0}=sigmoid(z_n)*(1-\sigma(z_n)) \dfrac{\partial p_2}{\partial W_0}$</p>
+<li><p>$\dfrac{\partial q_2}{\partial W_0} = \dfrac{\partial q_2}{\partial p_2} \dfrac{\partial p_2}{\partial W_0}=\sigma(z_n)*(1-\sigma(z_n)) \dfrac{\partial p_2}{\partial W_0}$</p>
 </li>
 <li><p>$q_3=z_i$ et $p_3=z_n=X_{i,0}*W_0+x_{n}*W_1$ donc $q_3=p3$</p>
 </li>
@@ -11972,7 +11972,7 @@ $$\dfrac{\partial L_n}{\partial W_0}= (-\dfrac{t_n}{\hat{t_n}}+\dfrac{1-t_n}{1-\
 <p>$$\dfrac{\partial L_n}{\partial W_0}= (\hat{t_n} -t_n)  x_{n}$$</p>
 <p>The matrix version is :</p>
 <p>$$\dfrac{\partial L}{\partial W}= X^T(\hat{T} -T)  $$</p>
-<h1 id="Breaking-news-:-A-word-on-the-gradient">Breaking news : A word on the gradient<a class="anchor-link" href="#Breaking-news-:-A-word-on-the-gradient">&#182;</a></h1><p>We see that the factor involving the derivative of the logistic sigmoid has cancelled, leading to a simplified form for the gradient of the log likelihood. In particular, the contribution to the gradient from data point n is given by the ‘error’ $t_n-\hat{t_n}$ between the target value and the prediction of the model, times the basis function vector x_n. Furthermore, we can say that this gradient takes precisely the same form as the gradient of the sum-of-squares error function for the linear regression model.</p>
+<h1 id="Breaking-news-:-A-word-on-the-gradient">Breaking news : A word on the gradient<a class="anchor-link" href="#Breaking-news-:-A-word-on-the-gradient">&#182;</a></h1><p>We see that the factor involving the derivative of the logistic sigmoid has cancelled, leading to a simplified form for the gradient of the log likelihood. In particular, the contribution to the gradient from data point n is given by the ‘error’ $t_n-\hat{t_n}$ between the target value and the prediction of the model, times the value $x_n$. Furthermore, we can say that this gradient takes precisely the same form as the gradient of the sum-of-squares error function for the linear regression model.</p>
 <p>The optimization problem is then convex. We can start with any random parameters $W$ and reach the minimum of $L$ by gradient descent.</p>
 
 </div>
